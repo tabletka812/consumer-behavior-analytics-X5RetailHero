@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: x5_retail_postgres
+    environment:
+      POSTGRES_DB: x5_retail
+      POSTGRES_USER: x5_user
+      POSTGRES_PASSWORD: x5_pass
+    ports:
+      - "55432:5432"
+    shm_size: 1gb
+    volumes:
+      - ./data:/data:ro
+      - ./sql:/sql:ro
+      - x5_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U x5_user -d x5_retail"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  x5_pgdata:
