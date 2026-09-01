@@ -38,7 +38,7 @@
  Датасет доступен на [kaggle](https://www.kaggle.com/datasets/shonenkov/x5retailheroupliftrawdata?select=uplift_sample_submission.csv).
 
 ## Схема базы данных
-ссылка на фотографию из репозитория 
+![Схема](dashboards/scheme.png)
 
 ## Стек и инфраструктура
 
@@ -70,12 +70,10 @@ docker-compose.yml
 ## Как воспроизвести
 
 ```bash
-# 1. Поднять PostgreSQL
 docker compose up -d
 
-# 2. Положить CSV датасета в ./data/
+#После того как подняли докер: положить CSV датасета в ./data/
 
-# 3. Прогнать SQL по порядку (из корня проекта)
 docker compose exec -T postgres psql -U x5_user -d x5_retail -f /sql/00_schema.sql
 docker compose exec -T postgres psql -U x5_user -d x5_retail -f /sql/01_load.sql
 ```
@@ -150,7 +148,7 @@ SQL: [`sql/04_retention_cohorts.sql`](sql/04_retention_cohorts.sql)
 
 Когорта = неделя первой покупки клиента в окне данных
 
-![Retention по неделям](docs/img/retention_heatmap.png)
+![Retention по неделям](dashboards/second_dash.png)
 
 **Результат:** retention стабильно высокий — 70–75% на глубоких периодах.
 
@@ -163,7 +161,7 @@ SQL: [`sql/04_retention_cohorts.sql`](sql/04_retention_cohorts.sql)
 
 SQL: [`sql/06_revenue_structure.sql`](sql/05_revenue_structure.sql)
 
-![Топ категорий по выручке](docs/img/revenue_categories.png)
+![Топ категорий по выручке](dashboards/third_dash.png)
 
 **Результат:** 42 категории (level_2). Выручка сильно сконцентрирована в нескольких верхних категориях.
 
@@ -177,7 +175,7 @@ SQL: [`sql/06_revenue_structure.sql`](sql/05_revenue_structure.sql)
 
 SQL: [`sql/05_rfm_segmentation.sql`](sql/06_rfm_segmentation.sql)
 
-![RFM-сегменты](docs/img/rfm_segments.png)
+![RFM-сегменты](dashboards/fourth_dash.png)
 
 **Результат:**
 
@@ -199,7 +197,7 @@ SQL: [`sql/05_rfm_segmentation.sql`](sql/06_rfm_segmentation.sql)
 
 SQL: [`sql/08_pareto_check.sql`](sql/07_pareto_check.sq)
 
-![Кривая Парето](docs/img/pareto_curve.png)
+![Кривая Парето](dashboards/fifth_dash)
 
 **Результат:** Небольшая верхняя часть клиентов приносит основную часть выручки, а дальше кривая быстро выравнивается
 
