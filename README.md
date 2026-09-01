@@ -197,7 +197,7 @@ SQL: [`sql/05_rfm_segmentation.sql`](sql/06_rfm_segmentation.sql)
 
 SQL: [`sql/08_pareto_check.sql`](sql/07_pareto_check.sq)
 
-![Кривая Парето](dashboards/fifth_dash)
+![Кривая Парето](dashboards/fifth_dash.png)
 
 **Результат:** Небольшая верхняя часть клиентов приносит основную часть выручки, а дальше кривая быстро выравнивается
 
