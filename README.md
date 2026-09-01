@@ -42,7 +42,9 @@
 
 ## Стек и инфраструктура
 
-- **PostgreSQL 16** (Docker, `postgres:16-alpine`),
+- **PostgreSQL 16**,
+- **Docker**,
+- **SQL (window functions)**,
 - **DataLens** (self-hosted, open-source) — BI-дашборд
 
 ## Структура репозитория
