@@ -222,5 +222,5 @@ SQL: [`sql/03_activation.sql`](sql/03_activation_cohort.sql)
 
 Дашборд собран в DataLens. DataLens развёрнут локально, поэтому скриншоты:
 
-![Dashboard X5 Retail — часть 1](docs/img/dashboard_1.png)
-![Dashboard X5 Retail — часть 2](docs/img/dashboard_2.png)
+![Dashboard X5 Retail — часть 1](dashboard/all_dashboard1.png)
+![Dashboard X5 Retail — часть 2](docs/all_dashboard2.png)
